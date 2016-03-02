@@ -1,0 +1,9 @@
+New Terrain 3.asset largemin
+terrain 5 medmin
+terrain 4 smallmin
+7 large med
+6 large high
+8 med med
+9 med high
+10 small med
+11 small high
