@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour {
     }
     public Inventory(int type)
     {
-        if (type == 0)
+        if (type == 0) //TODO: integrate inventory with inventory GUI and items
         {
             invType = InvType.Inventory;
             STACKLIMIT = 15;

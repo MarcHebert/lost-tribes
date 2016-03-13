@@ -15,7 +15,7 @@ public class InventoryGUI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () { //opens in game menu with hotkey I
         if (Input.GetKey(KeyCode.I))
         {
             inventoryWindowToggle = true;
@@ -25,8 +25,8 @@ public class InventoryGUI : MonoBehaviour {
     {
         if (inventoryWindowToggle)
         {
-            inventoryWindowRect = GUI.Window(0, inventoryWindowRect, InventoryWindowMethod, "Inventory");
-            if (Input.GetKey(KeyCode.Escape))
+            inventoryWindowRect = GUI.Window(0, inventoryWindowRect, InventoryWindowMethod, "Inventory"); //create window
+            if (Input.GetKey(KeyCode.Escape)) //exit window
             {
                 inventoryWindowToggle = false;
                 inventoryWindowRect = new Rect(0, 0, Screen.width, Screen.height);
@@ -35,7 +35,7 @@ public class InventoryGUI : MonoBehaviour {
         }
     }
     void InventoryWindowMethod(int windowID){
-        GUILayout.BeginArea(new Rect(0, 20, Screen.width, Screen.height - 20));
+        GUILayout.BeginArea(new Rect(0, 20, Screen.width, Screen.height - 20)); //generate window buttons
 
         GUILayout.BeginHorizontal();
         GUILayout.Button("Item 1", GUILayout.Height((Screen.height - 40) / 6));

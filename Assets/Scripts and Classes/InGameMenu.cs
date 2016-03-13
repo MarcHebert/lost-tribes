@@ -10,13 +10,13 @@ public class InGameMenu : MonoBehaviour
     InventoryGUI userInv;
     // Use this for initialization
     void Start()
-    {
-        userInv = GetComponent<InventoryGUI>();
+    { //TODO: get component of each GUI type
+        userInv = GetComponent<InventoryGUI>(); //ensures a GUI exists for each menu type
     }
     
     // Update is called once per frame
-    void Update()
-    {
+    void Update() //show window with hotkey Escape
+    { //TODO: show other submenus with button presses
         if (Input.GetKey(KeyCode.Escape) && menuWindowToggle == false)
         {
             menuWindowToggle = true;
@@ -26,7 +26,7 @@ public class InGameMenu : MonoBehaviour
     {
         if (menuWindowToggle == true)
         {
-            menuWindowRect = GUI.Window(0, menuWindowRect, MenuWindowMethod, "Menu");
+            menuWindowRect = GUI.Window(0, menuWindowRect, MenuWindowMethod, "Menu"); //create window
             if (button1)
             {
                 userInv.SetToggle(true);
@@ -36,7 +36,7 @@ public class InGameMenu : MonoBehaviour
         }
     }
     void MenuWindowMethod(int windowID)
-    {
+    { //generate window buttons
         GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
 
         GUILayout.BeginHorizontal();

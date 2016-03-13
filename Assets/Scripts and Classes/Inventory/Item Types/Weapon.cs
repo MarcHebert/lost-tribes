@@ -2,7 +2,7 @@
 using System.Collections;
 [System.Serializable]
 public abstract class Weapon : Item
-{
+{ //TODO: finish class with all functionality
     public int power;
     public int knockback;
     public WeaponType weaponType;

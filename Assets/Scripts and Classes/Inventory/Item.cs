@@ -68,22 +68,22 @@ public abstract class Item
     }
     public void Clone()
     {
-
+        //TODO: write clone function following prototype pattern
     }
     public void SpawnInWorld(float x, float y, float z)
     {
-
+        //TODO: write function
     }
     public void SpawnInChest(int chestID)
     {
-
+        //TODO: write function
     }
     public void SpawnInInventory(int inventoryID)
     {
-
+        //TODO: write function
     }
     public void Despawn()
     {
-
+        //TODO: write function
     }
 }
