@@ -10,6 +10,7 @@ public class InventoryGUI : MonoBehaviour {
     private static int INVENTORYSIZE = 45;
     private static int STACKLIMIT;
     private InvType invType;
+    private static Texture2D blank = Resources.Load("blankicon") as Texture2D;
     public enum InvType
     {
         Inventory,
@@ -30,60 +31,60 @@ public class InventoryGUI : MonoBehaviour {
     }
     private Dictionary<int, Texture2D> inventoryNameDictionary = new Dictionary<int, Texture2D>()
     {
-        {0, null},
-        {1, null},
-        {2, null},
-        {3, null},
-        {4, null},
-        {5, null},
-        {6, null},
-        {7, null},
-        {8, null},
-        {9, null},
-        {10, null},
-        {11, null},
-        {12, null},
-        {13, null},
-        {14, null},
-        {15, null},
-        {16, null},
-        {17, null},
-        {18, null},
-        {19, null},
-        {20, null},
-        {21, null},
-        {22, null},
-        {23, null},
-        {24, null},
-        {25, null},
-        {26, null},
-        {27, null},
-        {28, null},
-        {29, null},
-        {30, null},
-        {31, null},
-        {32, null},
-        {33, null},
-        {34, null},
-        {35, null},
-        {36, null},
-        {37, null},
-        {38, null},
-        {39, null},
-        {40, null},
-        {41, null},
-        {42, null},
-        {43, null},
-        {44, null},
+        {0, blank},
+        {1, blank},
+        {2, blank},
+        {3, blank},
+        {4, blank},
+        {5, blank},
+        {6, blank},
+        {7, blank},
+        {8, blank},
+        {9, blank},
+        {10, blank},
+        {11, blank},
+        {12, blank},
+        {13, blank},
+        {14, blank},
+        {15, blank},
+        {16, blank},
+        {17, blank},
+        {18, blank},
+        {19, blank},
+        {20, blank},
+        {21, blank},
+        {22, blank},
+        {23, blank},
+        {24, blank},
+        {25, blank},
+        {26, blank},
+        {27, blank},
+        {28, blank},
+        {29, blank},
+        {30, blank},
+        {31, blank},
+        {32, blank},
+        {33, blank},
+        {34, blank},
+        {35, blank},
+        {36, blank},
+        {37, blank},
+        {38, blank},
+        {39, blank},
+        {40, blank},
+        {41, blank},
+        {42, blank},
+        {43, blank},
+        {44, blank},
     };
-    // Use this for initialization
+    
 
     void AddItem(int rid)
     {
 
     }
 
-    void Start()
+    void Start() // Use this for initialization
     {
         stickItem = new Stick(new Vector3(2245.7F, 10.95F, 3160.7F));
         Debug.Log("Stick instantiated");
@@ -111,6 +112,12 @@ public class InventoryGUI : MonoBehaviour {
         }
     }
     void InventoryWindowMethod(int windowID){
+
+        for (int i = 0; i < 45; i++)
+        {
+            inventoryNameDictionary[i] = blank;
+        }
+
         GUILayout.BeginArea(new Rect(0, 20, Screen.width, Screen.height - 20)); //generate window buttons
 
         GUILayout.BeginHorizontal();

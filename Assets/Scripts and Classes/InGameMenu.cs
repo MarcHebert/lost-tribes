@@ -39,8 +39,14 @@ public class InGameMenu : MonoBehaviour
 
         GUILayout.BeginHorizontal();
         GUILayout.Button("Inventory", GUILayout.Height(Screen.height / 4 - 200));
+        GUILayout.EndHorizontal();
+        GUILayout.BeginHorizontal();
         GUILayout.Button("Crafting", GUILayout.Height(Screen.height / 4 - 200));
+        GUILayout.EndHorizontal();
+        GUILayout.BeginHorizontal();
         GUILayout.Button("Journal", GUILayout.Height(Screen.height / 4 - 200));
+        GUILayout.EndHorizontal();
+        GUILayout.BeginHorizontal();
         GUILayout.Button("Survival Guide", GUILayout.Height(Screen.height / 4 - 200));
         GUILayout.EndHorizontal();
 
