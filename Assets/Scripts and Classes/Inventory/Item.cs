@@ -5,12 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public abstract class Item
 {
-    private string itemName;
-    private int itemID;
-    private int referenceID;
-    private string itemDesc;
-    private Texture2D itemIcon;
-    private ItemType itemType;
+    GameObject itemInstance;
+    public string itemName;
+    public int itemID;
+    public int referenceID;
+    public string itemDesc;
+    public Texture2D itemIcon;
+    public ItemType itemType;
+    public int referenceIDCounter = 0;
+    public Vector3 location;
     public enum ItemType
     {
         Weapon,
@@ -69,10 +72,17 @@ public abstract class Item
     public void Clone()
     {
         //TODO: write clone function following prototype pattern
+        //copy item info from rid to new rid
+        //use spawn in __ function
     }
-    public void SpawnInWorld(float x, float y, float z)
+    public void SpawnInWorld(Item toSpawn, Vector3 loc)
     {
         //TODO: write function
+        itemInstance =
+            GameObject.Instantiate(Resources.Load(toSpawn.itemName),
+            loc,
+            Quaternion.identity) as GameObject;
+        Debug.Log(toSpawn.itemName + " spawned");
     }
     public void SpawnInChest(int chestID)
     {
@@ -84,6 +94,6 @@ public abstract class Item
     }
     public void Despawn()
     {
-        //TODO: write function
+        GameObject.Destroy(itemInstance);
     }
 }
