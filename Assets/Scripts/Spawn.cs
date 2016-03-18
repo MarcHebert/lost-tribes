@@ -17,7 +17,7 @@ public class Spawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//TODO: change this to spawn after an animal dies
-		InvokeRepeating ("SpawnBoar", 0, spawnTime);
+		InvokeRepeating ("SpawnBoar", 3, spawnTime);
 	}
 	
 	// Update is called once per frame

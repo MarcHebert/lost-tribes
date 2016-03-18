@@ -12,23 +12,12 @@ public class Boar : AbstractEnemy {
 	// Use this for initialization
 	void Start () {
 
-		//FOR NAVMESH
-		//move to Patrol()
-		agent = GetComponent<NavMeshAgent> ();
-		if (tag.Equals ("Boar")) {
-			//Issue: boar's rotation isn't preserved while navigating
-			agent.updateRotation = false;
-		}
-
-
+		Patrol ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 
 	}
 
 	void Update() {
-
-		//test - random location
-		agent.destination = new Vector3 (2949, 350, 816);
 
 	}
 
@@ -36,8 +25,9 @@ public class Boar : AbstractEnemy {
 
 	//Controls movement and plays walking animations
 	public override void Patrol(){
-		//borrowing from: http://answers.unity3d.com/questions/429623/enemy-movement-from-waypoint-to-waypoint.html
-		//nvm use navmesh
+		//Boar specific - no need to fuck around with rotation for other objs
+		agent = GetComponent<NavMeshAgent> ();
+		agent.destination = new Vector3 (2949, 450, 816);
 
 	}
 	
